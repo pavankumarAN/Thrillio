@@ -1,5 +1,6 @@
 package com.athyamsha.thrillio;
 
+import com.athyamsha.thrillio.constants.BookGenre;
 import com.athyamsha.thrillio.constants.Gender;
 import com.athyamsha.thrillio.constants.MovieGenre;
 import com.athyamsha.thrillio.constants.UserType;
@@ -22,11 +23,6 @@ public class DataStore {
 		loadWebLinks();
 		loadMovies();
 		loadBooks();
-	}
-
-	private static void loadBooks() {
-		// TODO Auto-generated method stub
-
 	}
 
 	private static void loadUsers() {
@@ -60,6 +56,22 @@ public class DataStore {
 
 	private static void loadMovies() {
 		bookmarks[1][0] = BookmarkManager.getInstance().createMovie(3000, "Citizen Kane", "", 1941,
-				new String[] {"Orson Welles","Joseph Cotten"}, new String[] {"Orson Welles"}, MovieGenre.CLASSICS, 8.5);
+				new String[] { "Orson Welles", "Joseph Cotten" }, new String[] { "Orson Welles" }, MovieGenre.CLASSICS,
+				8.5);
+		bookmarks[1][1] = BookmarkManager.getInstance().createMovie(3001, "The Grapes of Wrath", "", 1941,
+				new String[] { "Henry Fonda", "Jane Darwell" }, new String[] { "John Ford" }, MovieGenre.CLASSICS, 8.2);
+		bookmarks[1][2] = BookmarkManager.getInstance().createMovie(3002, "A Touch of Greatness", "", 2004,
+				new String[] { "Albert Cullum" }, new String[] { "Leslie Sullivan" }, MovieGenre.DOCUMENTARIES, 7.3);
+		bookmarks[1][3] = BookmarkManager.getInstance().createMovie(3000, "The Big Bang Theory", "", 2007,
+				new String[] { "Kaley Cuoco", "Jim Parsons" }, new String[] { "Chuck Lorre", "Bill Prady" },
+				MovieGenre.TV_SHOWS, 8.7);
+		bookmarks[1][4] = BookmarkManager.getInstance().createMovie(3000, "Ikiru", "", 1952,
+				new String[] { "Takashi Shimura", "Minoru Chiaki" }, new String[] { "Akira Kurosawa" },
+				MovieGenre.FOREIGN_MOVIES, 8.4);
+	}
+
+	private static void loadBooks() {
+		bookmarks[2][0] = BookmarkManager.getInstance().createBook(4000, "Walden", 1854, "Wilder Publications",
+				new String[] { "Henry David Thoreau" }, BookGenre.PHILOSOPHY, 4.3);
 	}
 }
