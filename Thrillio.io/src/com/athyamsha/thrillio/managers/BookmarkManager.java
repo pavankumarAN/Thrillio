@@ -1,11 +1,16 @@
 package com.athyamsha.thrillio.managers;
 
 import com.athyamsha.thrillio.entities.Movie;
+import com.athyamsha.thrillio.entities.User;
+import com.athyamsha.thrillio.entities.UserBookMark;
+import com.athyamsha.thrillio.dao.BookmarkDao;
 import com.athyamsha.thrillio.entities.Book;
+import com.athyamsha.thrillio.entities.Bookmark;
 import com.athyamsha.thrillio.entities.WebLink;
 
 public class BookmarkManager {
 	private static BookmarkManager instance = new BookmarkManager();
+	private static BookmarkDao dao = new BookmarkDao();
 
 	private BookmarkManager() {
 
@@ -52,5 +57,17 @@ public class BookmarkManager {
 		movie.setImdbRating(imdbRating);
 
 		return movie;
+	}
+
+	public Bookmark[][] getBookmarks() {
+		return dao.getBookmarks();
+	}
+
+	public void saveUserBookmark(User user, Bookmark bookmark) {
+		UserBookMark userBookmark = new UserBookMark();
+		userBookmark.setUser(user);
+		userBookmark.setBookmark(bookmark);
+
+		dao.saveUserBookmark(userBookmark);
 	}
 }

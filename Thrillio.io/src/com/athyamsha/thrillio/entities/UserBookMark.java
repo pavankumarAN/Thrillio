@@ -20,4 +20,9 @@ public class UserBookMark {
 	}
 
 	private Bookmark bookmark;
+
+	@Override
+	public String toString() {
+		return "UserBookMark [user=" + user + ", bookmark=" + bookmark + "]";
+	}
 }

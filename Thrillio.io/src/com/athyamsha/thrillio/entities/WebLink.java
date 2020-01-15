@@ -20,4 +20,9 @@ public class WebLink extends Bookmark {
 		this.host = host;
 	}
 
+	@Override
+	public String toString() {
+		return "WebLink [url=" + url + ", host=" + host + "]";
+	}
+
 }

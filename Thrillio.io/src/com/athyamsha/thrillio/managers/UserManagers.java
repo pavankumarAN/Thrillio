@@ -1,9 +1,11 @@
 package com.athyamsha.thrillio.managers;
 
+import com.athyamsha.thrillio.dao.UserDao;
 import com.athyamsha.thrillio.entities.User;
 
 public class UserManagers {
 	private static UserManagers instance = new UserManagers();
+	private static UserDao dao = new UserDao();
 
 	private UserManagers() {
 
@@ -25,5 +27,9 @@ public class UserManagers {
 		user.setUserType(userType);
 
 		return user;
+	}
+	
+	public User[] getUsers() {
+		return dao.getUsers();
 	}
 }

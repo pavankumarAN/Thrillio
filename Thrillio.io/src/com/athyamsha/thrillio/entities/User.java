@@ -65,4 +65,10 @@ public class User {
 		this.userType = userType;
 	}
 
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", email=" + email + ", firstName=" + firstName + ", lastName=" + lastName
+				+ ", password=" + password + ", gender=" + gender + ", userType=" + userType + "]";
+	}
+
 }

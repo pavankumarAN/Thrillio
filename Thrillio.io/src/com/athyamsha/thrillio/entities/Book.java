@@ -1,6 +1,8 @@
 package com.athyamsha.thrillio.entities;
 
-public class Book {
+import java.util.Arrays;
+
+public class Book extends Bookmark {
 	private long id;
 	private String title;
 	private int publicationYear;
@@ -63,6 +65,13 @@ public class Book {
 
 	public void setAmazonRating(double amazonRating) {
 		this.amazonRating = amazonRating;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [id=" + id + ", title=" + title + ", publicationYear=" + publicationYear + ", publisher="
+				+ publisher + ", authors=" + Arrays.toString(authors) + ", genre=" + genre + ", amazonRating="
+				+ amazonRating + "]";
 	}
 
 }
